@@ -12,13 +12,17 @@ class LyraForm extends PureComponent {
     });
 
     this.state = {
+      isVisible: true,
       dynamicKrPostUrlRefused: null,
       dynamicKrPostUrlSuccess: null,
     }
   }
 
   render() {
-    const { isVisible } = this.props;
+    const { isVisible: isVisibleProps } = this.props;
+    const { isVisible: isVisibleState } = this.state;
+    const isVisible = isVisibleProps !== undefined ? isVisibleProps : isVisibleState;
+
     return (
       <div style={{ opacity: isVisible ? 1 : 0 }}>
         <div className="kr-embedded">
