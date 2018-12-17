@@ -11,6 +11,8 @@ export default function (setup) {
       script.type = 'text/javascript';
 
       let domain = setup["kr-client-domain"];
+      window['kr-client-domain'] = domain;
+      window['kr-theme'] = setup['kr-theme'];
 
       if (/^http.+\.js.*$/.test(domain)) {
         script.src = domain;

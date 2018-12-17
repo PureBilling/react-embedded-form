@@ -1,10 +1,9 @@
 let accumulatedCallbacks = {};
 let accumulator = (name, args) => {
   if (!accumulatedCallbacks.hasOwnProperty(name)) accumulatedCallbacks[name] = [];
-
   switch (name) {
     case "setFormConfig":
-      if (typeof(window.KR_CONFIGURATION) === "undefined") window.KR_CONFIGURATION = {};
+      if (typeof window.KR_CONFIGURATION === "undefined") window.KR_CONFIGURATION = {};
       let confKeys = Object.keys(args);
       confKeys.forEach(key => {
         window.KR_CONFIGURATION[key] = args[key];
@@ -57,14 +56,8 @@ export default {
   normalize(from, to, value = "") {
     if (from.toLowerCase() === "kebabcase") {
       if (to.toLowerCase() === "pascalcase") {
-        let converter = m => {
-          return m[1].toUpperCase();
-        };
         return value.replace(/(\-\w)/g, function (m) {return m[1].toUpperCase();});
       } else if (to.toLowerCase() === "camelcase") {
-        let converter = m => {
-          return m[1].toUpperCase();
-        };
         let camelValue = value.replace(/(\-\w)/g, function (m) {return m[1].toUpperCase();});
         return camelValue.charAt(0).toUpperCase() + camelValue.slice(1);
       }
