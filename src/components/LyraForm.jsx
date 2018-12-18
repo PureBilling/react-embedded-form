@@ -116,6 +116,17 @@ class LyraForm extends PureComponent {
   }
 }
 
-LyraForm.propTypes = {};
+LyraForm.propTypes = {
+  'kr-form-token': PropTypes.string,
+  'kr-language': PropTypes.string,
+  'kr-placeholder-pan': PropTypes.string,
+  'kr-placeholder-expiry': PropTypes.string,
+  'kr-placeholder-security-code': PropTypes.string,
+  'kr-hide-debug-toolbar': PropTypes.string,
+  'kr-clear-on-error': PropTypes.string,
+  'kr-post-url-success': PropTypes.string,
+  'kr-post-url-refused': PropTypes.string,
+  isVisible: PropTypes.bool,
+};
 
 export default LyraForm;
