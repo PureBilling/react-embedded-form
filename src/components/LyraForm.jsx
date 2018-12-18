@@ -5,12 +5,6 @@ import kr from "../service/kr";
 class LyraForm extends PureComponent {
   constructor(props) {
     super(props);
-    kr.setFormConfig({
-      "formToken": (window.PARAMS && window.PARAMS.formToken)
-        ? window.PARAMS.formToken
-        : "01O0xI6UfrRFKb7J9_G30R_Q18AeyJhIjo5OTAsIm0iOiJFVVIiLCJvIjoiZGVtby01YmM4NjhmYzQ0MDAyIiwiYyI6eyJiIjp7InZpIjp7ImYiOnsidmFkQ2FyZFR5cGUiOnsidmFsdWUiOiJWSVNBIn19fSwibWMiOnsiZiI6eyJ2YWRDYXJkVHlwZSI6eyJ2YWx1ZSI6Ik1BU1RFUkNBUkQifX19LCJhbSI6eyJmIjp7InZhZENhcmRUeXBlIjp7InZhbHVlIjoiQU1FWCJ9fX0sImNiIjp7ImYiOnsiZGViaXRDcmVkaXQiOnsidmFsdWUiOiJjcmVkaXQifX19fX196102",
-    });
-
     this.state = {
       isVisible: true,
       dynamicKrPostUrlRefused: null,
@@ -60,13 +54,6 @@ class LyraForm extends PureComponent {
     const {
       'kr-form-token': formToken,
       'kr-language': language,
-      'kr-placeholder-pan': placeholderPan,
-      'kr-placeholder-expiry': placeholderExpiry,
-      'kr-placeholder-security-code': placeholderSecurityCode,
-      'kr-hide-debug-toolbar': hideToolbar,
-      'kr-clear-on-error': clearOnError,
-      'kr-post-url-success': postSuccess,
-      'kr-post-url-refused': postRefused,
     } = this.props;
 
     let formConfig = {
@@ -77,13 +64,6 @@ class LyraForm extends PureComponent {
 
     if (krPublicKey) formConfig['publicKey'] = krPublicKey;
     if (language) formConfig['language'] = language;
-    if (placeholderPan) formConfig['placeholderPan'] = placeholderPan;
-    if (placeholderExpiry) formConfig['placeholderExpiry'] = placeholderExpiry;
-    if (placeholderSecurityCode) formConfig['placeholderSecurityCode'] = placeholderSecurityCode;
-    if (hideToolbar) formConfig['hideDebugToolbar'] = hideToolbar;
-    if (clearOnError) formConfig['clearOnError'] = clearOnError;
-    if (postSuccess) formConfig['postUrlSuccess'] = postSuccess;
-    if (postRefused) formConfig['postUrlRefused'] = postRefused;
 
     // Wait until everything is loaded
     let loadCheckInterval = setInterval(() => {
@@ -99,10 +79,32 @@ class LyraForm extends PureComponent {
     const { isVisible: isVisibleState } = this.state;
     const isVisible = isVisibleProps !== undefined && typeof isVisibleProps === 'boolean'
       ? isVisibleProps : isVisibleState;
+    const {
+      'kr-form-token': formToken,
+      'kr-language': language,
+      'kr-placeholder-pan': placeholderPan,
+      'kr-placeholder-expiry': placeholderExpiry,
+      'kr-placeholder-security-code': placeholderSecurityCode,
+      'kr-hide-debug-toolbar': hideToolbar,
+      'kr-clear-on-error': clearOnError,
+      'kr-post-url-success': postSuccess,
+      'kr-post-url-refused': postRefused,
+    } = this.props;
 
     return (
       <div style={{ opacity: isVisible ? 1 : 0 }}>
-        <div className="kr-embedded">
+        <div
+          className="kr-embedded"
+          kr-form-token={formToken}
+          kr-language={language}
+          kr-placeholder-pan={placeholderPan}
+          kr-placeholder-expiry={placeholderExpiry}
+          kr-placeholder-security-code={placeholderSecurityCode}
+          kr-hide-debug-toolbar={hideToolbar}
+          kr-clear-on-error={clearOnError}
+          kr-post-url-success={postSuccess}
+          kr-post-url-refused={postRefused}
+        >
           <div className="kr-pan"/>
           <div className="kr-expiry"/>
           <div className="kr-security-code"/>

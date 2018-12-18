@@ -14,13 +14,13 @@ class App extends PureComponent {
     return (
       <div>
         <LyraForm
-          kr-form-token="01O0xI6UfrRFKb7J9_G30R_Q18AeyJhIjo5OTAsIm0iOiJFVVIiLCJvIjoiZGVtby01YmM4NjhmYzQ0MDAyIiwiYyI6eyJiIjp7InZpIjp7ImYiOnsidmFkQ2FyZFR5cGUiOnsidmFsdWUiOiJWSVNBIn19fSwibWMiOnsiZiI6eyJ2YWRDYXJkVHlwZSI6eyJ2YWx1ZSI6Ik1BU1RFUkNBUkQifX19LCJhbSI6eyJmIjp7InZhZENhcmRUeXBlIjp7InZhbHVlIjoiQU1FWCJ9fX0sImNiIjp7ImYiOnsiZGViaXRDcmVkaXQiOnsidmFsdWUiOiJjcmVkaXQifX19fX196102"
+          kr-form-token="013023XhmLSs67YzwRY7ZV2w18CeyJhIjo5OTAsIm0iOiJFVVIiLCJvIjpudWxsLCJjIjp7ImIiOnsidmkiOnsiZiI6eyJ2YWRDYXJkVHlwZSI6eyJ2YWx1ZSI6IlZJU0EifX19LCJtYyI6eyJmIjp7InZhZENhcmRUeXBlIjp7InZhbHVlIjoiTUFTVEVSQ0FSRCJ9fX0sImFtIjp7ImYiOnsidmFkQ2FyZFR5cGUiOnsidmFsdWUiOiJBTUVYIn19fSwiY2IiOnsiZiI6eyJkZWJpdENyZWRpdCI6eyJ2YWx1ZSI6ImNyZWRpdCJ9fX19fX0b602"
           kr-language="en-EN"
-          kr-placeholder-pan="MY AWESOME PAN"
-          kr-placeholder-expiry="MY AWESOME EXPIRY"
-          kr-placeholder-security-code="SECURITY CODE"
-          kr-hide-debug-toolbar="true"
-          kr-clear-on-error={false}
+          kr-placeholder-pan="Pan"
+          kr-placeholder-expiry="Expiry"
+          kr-placeholder-security-code="Security Code"
+          kr-hide-debug-toolbar="false"
+          kr-clear-on-error="false"
           kr-post-url-success="/success"
           kr-post-url-refused="/refused"
         />
