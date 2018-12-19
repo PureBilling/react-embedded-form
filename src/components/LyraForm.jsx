@@ -92,7 +92,7 @@ class LyraForm extends PureComponent {
     } = this.props;
 
     return (
-      <div style={{ opacity: isVisible ? 1 : 0 }}>
+      <div className="kr-embedded-wrapper-isVisible" style={{ opacity: isVisible ? 1 : 0 }}>
         <div
           className="kr-embedded"
           kr-form-token={formToken}
