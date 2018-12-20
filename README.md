@@ -32,12 +32,12 @@ You can add a form to any React application as follows:
 
 ```javascript
 // Import the library
-import { LyraForm, setGlobalOptions } from "package-name"
+import { LyraForm, setGlobalOptions } from 'package-name'
 
 // define component setup options
 const setup = {
     'kr-client-domain': 'https://api.payzen.eu',
-    'kr-theme': "classic",
+    'kr-theme': 'classic',
     'kr-public-key': '69876357:testpublickey_DEMOPUBLICKEY95me92597fd28tGD4r5'
 };
 
@@ -48,15 +48,15 @@ Now, you can add the component to your application:
 
 ```javascript
 <LyraForm
-    kr-form-token="YOUR_TOKEN"
-    kr-post-url-success="/success"
-    kr-post-url-refused="/refused"
-    kr-language="en-EN"
-    kr-placeholder-pan="Pan"
-    kr-placeholder-expiry="Expiry"
-    kr-placeholder-security-code="Security Code"
-    kr-hide-debug-toolbar="true"
-    kr-clear-on-error="false"
+    kr-form-token='YOUR_TOKEN'
+    kr-post-url-success='/success'
+    kr-post-url-refused='/refused'
+    kr-language='en-EN'
+    kr-placeholder-pan='Pan'
+    kr-placeholder-expiry='Expiry'
+    kr-placeholder-security-code='Security Code'
+    kr-hide-debug-toolbar='true'
+    kr-clear-on-error='false'
 />
 ```
 
@@ -92,14 +92,14 @@ All the **Parameters** are configurable on the setup step adding the value on th
 
 ```javascript
 // Import the library
-import { LyraForm, setGlobalOptions } from "package-name"
+import { LyraForm, setGlobalOptions } from 'package-name'
 
 // Configure your endpoint of payment
 const setup = {
     'kr-client-domain': 'https://api.payzen.eu',
     'kr-post-url-success': '/post-result',
     'kr-public-key': '69876357:testpublickey_DEMOPUBLICKEY95me92597fd28tGD4r5',
-    'kr-theme': "classic",
+    'kr-theme': 'classic',
     (...)
 };
 setGlobalOptions(setup);
@@ -125,8 +125,8 @@ library method:
 
 ```javascript
 window.KR.setFormConfig({
-    "kr-post-url-success": "/my-post",
-    "kr-placeholder-expiry": "My expiration date",
+    'kr-post-url-success': '/my-post',
+    'kr-placeholder-expiry': 'My expiration date',
 });
 ```
 
