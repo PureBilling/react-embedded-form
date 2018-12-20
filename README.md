@@ -60,12 +60,25 @@ Now, you can add the component to your application:
 />
 ```
 
-## Example
+## Examples
 
 Example                              | Description
 ------------------------------------ | ---------------------------------------------------
 [minimal](examples/minimal)          | a minimal example
 [pre-loaded](examples/pre-loaded)    | pre-load the payment form to get it as fast as possible
+
+You can run these examples from 'minimal' folder or 'pre-loaded'
+
+Go to the certain folder (e.g. minimal) and execute npm or yarn command
+
+```bash
+npm install
+npm run start
+```
+```bash
+yarn install
+yarn start
+```
 
 ## Parameters
 
