@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import LyraForm from "./components/LyraForm";
-import setupOptions from "./tools/setupOptions";
+import setGlobalOptions from "./tools/setGlobalOptions";
 
 const setup = {
   'kr-client-domain': 'https://api.payzen.eu',
@@ -16,7 +16,7 @@ const setup = {
   'kr-post-url-refused': '/refused',
   'kr-language': 'en-EN',
 };
-setupOptions(setup);
+setGlobalOptions(setup);
 
 class App extends PureComponent {
   handleSetOptions = () => {

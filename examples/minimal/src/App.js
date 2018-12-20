@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import setupOptions from './lyra-form/tools/setupOptions';
+import setGlobalOptions from './lyra-form/tools/setGlobalOptions';
 import LyraForm from './lyra-form/LyraForm';
 
 const setup = {
@@ -11,7 +11,7 @@ const setup = {
   'kr-post-url-refused': '/refused',
   'kr-language': 'en-EN',
 };
-setupOptions(setup);
+setGlobalOptions(setup);
 
 class App extends Component {
   render() {

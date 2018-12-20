@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow, configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import setupOptions from '../tools/setupOptions';
+import setupOptions from '../tools/setGlobalOptions';
 import LyraForm from '../components/LyraForm';
 
 configure({ adapter: new Adapter() });
