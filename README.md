@@ -65,7 +65,7 @@ Now, you can add the component to your application:
 Example                              | Description
 ------------------------------------ | ---------------------------------------------------
 [minimal](examples/minimal)          | a minimal example
-[pre-loaded](examples/pre_loaded)    | pre-load the payment form to get it as fast as possible
+[pre-loaded](examples/pre-loaded)    | pre-load the payment form to get it as fast as possible
 
 ## Parameters
 
