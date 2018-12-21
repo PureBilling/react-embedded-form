@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import kr from "./service/kr";
+
+import kr from './service/kr';
 
 class LyraForm extends PureComponent {
   constructor(props) {
@@ -9,26 +10,24 @@ class LyraForm extends PureComponent {
       isVisible: true,
       dynamicKrPostUrlRefused: null,
       dynamicKrPostUrlSuccess: null,
-    }
-  };
+    };
+  }
 
   componentDidMount() {
     const { 'kr-form-token': krFormToken } = this.props;
 
     // Inheritate from global
-    let globalConfiguration = kr.getGlobalConfiguration();
-    Object.keys(globalConfiguration).forEach(key => {
-      let camelCaseKey = kr.normalize('kebabCase', 'camelCase', key);
-      let dataKey = `dynamic${camelCaseKey}`;
+    const globalConfiguration = kr.getGlobalConfiguration();
+    Object.keys(globalConfiguration).forEach((key) => {
+      const camelCaseKey = kr.normalize('kebabCase', 'camelCase', key);
+      const dataKey = `dynamic${camelCaseKey}`;
       if (!this.state[dataKey]) {
-        this.setState({
-          [dataKey]: globalConfiguration[key],
-        });
+        this.setState({ [dataKey]: globalConfiguration[key] });
       }
     });
 
-    if (krFormToken) this.setupForm();
-  };
+    if (krFormToken != null) this.setupForm();
+  }
 
   componentDidUpdate(prevProps) {
     if (prevProps['kr-form-token'] !== this.props['kr-form-token']) this.setupForm();
@@ -56,17 +55,17 @@ class LyraForm extends PureComponent {
       'kr-language': language,
     } = this.props;
 
-    let formConfig = {
-      'formToken': formToken,
+    const formConfig = {
+      formToken,
     };
 
     const krPublicKey = window['kr-public-key'];
 
-    if (krPublicKey) formConfig['publicKey'] = krPublicKey;
-    if (language) formConfig['language'] = language;
+    if (krPublicKey) formConfig.publicKey = krPublicKey;
+    if (language) formConfig.language = language;
 
     // Wait until everything is loaded
-    let loadCheckInterval = setInterval(() => {
+    const loadCheckInterval = setInterval(() => {
       if (document.readyState === 'complete') {
         clearInterval(loadCheckInterval);
         kr.setFormConfig(formConfig);
@@ -105,11 +104,11 @@ class LyraForm extends PureComponent {
           kr-post-url-success={postSuccess}
           kr-post-url-refused={postRefused}
         >
-          <div className="kr-pan"/>
-          <div className="kr-expiry"/>
-          <div className="kr-security-code"/>
-          <button className="kr-payment-button"/>
-          <div className="kr-form-error"/>
+          <div className="kr-pan" />
+          <div className="kr-expiry" />
+          <div className="kr-security-code" />
+          <button className="kr-payment-button" />
+          <div className="kr-form-error" />
         </div>
       </div>
     );

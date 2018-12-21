@@ -1,5 +1,5 @@
 export default (context, variableName, cb, interval = 50) => {
-  let checkVariable = () => {
+  const checkVariable = () => {
     if (context[variableName]) {
       cb();
     } else {
@@ -8,4 +8,4 @@ export default (context, variableName, cb, interval = 50) => {
   };
 
   setTimeout(checkVariable, 0);
-}
+};

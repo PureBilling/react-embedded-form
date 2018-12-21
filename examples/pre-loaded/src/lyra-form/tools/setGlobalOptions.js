@@ -1,16 +1,16 @@
-import themeTools from "./theme";
-import whenDefined from "./whenDefined";
-import kr from "../service/kr";
+import themeTools from './theme';
+import whenDefined from './whenDefined';
+import kr from '../service/kr';
 
 export default function (setup) {
   if (typeof window.KR_CLIENT_LOADED === 'undefined') {
     window.KR_CLIENT_LOADED = true;
     themeTools.loader(setup['kr-client-domain'], setup['kr-theme'], () => {
       // Load the script
-      let script = document.createElement('script');
+      const script = document.createElement('script');
       script.type = 'text/javascript';
 
-      let domain = setup["kr-client-domain"];
+      const domain = setup['kr-client-domain'];
 
       if (/^http.+\.js.*$/.test(domain)) {
         script.src = domain;
@@ -18,7 +18,7 @@ export default function (setup) {
         script.src = `${domain}/static/js/krypton-client/V4.0/stable/kr-payment-form.min.js`;
       }
 
-      let propagationKeys = [
+      const propagationKeys = [
         'kr-clear-on-error',
         'kr-hide-debug-toolbar',
         'kr-form-token',
@@ -30,9 +30,9 @@ export default function (setup) {
         'kr-placeholder-security-code',
       ];
 
-      let globalConfiguration = {};
+      const globalConfiguration = {};
 
-      propagationKeys.forEach(propKey => {
+      propagationKeys.forEach((propKey) => {
         if (setup.hasOwnProperty(propKey)) {
           script.setAttribute(propKey, setup[propKey]);
           globalConfiguration[propKey] = setup[propKey];
@@ -47,7 +47,7 @@ export default function (setup) {
   }
 
   whenDefined(window, 'KR', () => {
-    whenDefined(window.KR, "onFormReady", () => {
+    whenDefined(window.KR, 'onFormReady', () => {
       kr.triggerReady();
     });
   });
